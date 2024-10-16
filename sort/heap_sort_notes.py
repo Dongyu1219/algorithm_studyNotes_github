@@ -9,10 +9,10 @@ array = [
 count = len(array)
 
 def heapify(root, size):
-    left_child = root*2 +1
+    left_child = root*2 +1  #왼쪽 자식의 인덱스 공식 : root*2 +1
     if left_child >= size : return
     child = left_child
-    right_child = root*2 +2
+    right_child = root*2 +2 #오른쪽 자식: 루트 x2 +2
     if right_child < size:
         if array[left_child] > array[right_child]:
             child = left_child
