@@ -1,3 +1,4 @@
+#기수정렬은 비교정렬이 아니다. 숫자들을 한자리씩 부분적으로 비교
 array = [
     46, 82, 21, 58, 22, 54, 71, 215, 99, 227, 
     73, 24, 17, 44, 244, 78, 25, 66, 47, 3, 
@@ -8,15 +9,12 @@ array = [
 
 count = len(array)
 
-def bubble_sort(arr):
-       for end in range(count-1, 0, -1):
-              for i in range(count-1):
-                     if arr[i]> arr[i+1]:
-                            arr[i], arr[i+1] =arr[i+1] , arr[i]
+def radix_sort(arr):     
+       pass
 
 def main():
        print(f'before: {array}')
-       bubble_sort(array)
+       raidx_sort(array)
        print(f'after: {array}')
 
 if __name__ == '__main__':
