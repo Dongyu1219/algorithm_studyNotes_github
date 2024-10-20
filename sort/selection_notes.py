@@ -17,20 +17,21 @@ words = [
 ]
 
 def selection(arr, start, end, nth):
-		# pi = qs.partition(arr, start, end)		#pivot 인덱스
-	# ss = pi - start #smalgroup의 size
-	# #smalgroup의 size 와 몇번째(nth)을 찾을거냐 --> case 3개
+       if start == end:  # 배열에 원소가 하나만 남아 있으면 그 원소가 nth
+              return arr[start]
+       pi = partition(arr, start, end)		#pivot 인덱스
+       ss = pi - start #smalgroup의 size
+	#smalgroup의 size 와 몇번째(nth)을 찾을거냐 --> case 3개
 	# ss vs nth
-	# case ss == nth-1:
-	# 	return arr[pi]
-	# case <
-	# 	return selection(start ~ pi-1)
-	# case >
-	# 	return selection(pi+1 ~ end)
+       if ss == nth-1:
+              return arr[pi]
+       elif ss>nth-1:
+              return selection(arr, start, pi-1, nth)
+       else:
+              return selection(arr, pi+1, end, nth- ss -1)
 
-	pass
 
-def partition(left, right):
+def partition(array, left, right):
        pi = left                          #가장 왼쪽 값을 피벗으로 삼는다. pi = pivot index
        pivot = array[pi]                  #pivot = value
 
@@ -66,14 +67,14 @@ def partition(left, right):
 def main():
 	print(f'{words}')
 
-	# ranks = [3, 17, 23, 88, 99 ]
+	ranks = [3, 17, 23, 88, 99 ]
 
-	# last_word_index = len(qs.words ) -1
-	# for rank in ranks:
-	# 	words = qs.words[:]
-	# 	word = selection(words, 0, last_word_index, rank)
-	# 	word = words[rank-1]		
-	# 	print(f'{rank=} {word =}')
+	last_word_index = len(words ) -1
+	for rank in ranks:
+	 	wordss = words[:]
+	 	word = selection(wordss, 0, last_word_index, rank)
+	 	#word = wordss[rank-1]		
+	 	print(f'{rank=} {word =}')
 
 if __name__ == '__main__':
 	main()
