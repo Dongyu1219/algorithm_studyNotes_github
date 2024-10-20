@@ -3,7 +3,7 @@ array = [
     73, 24, 17, 44, 244, 78, 25, 66, 47, 3, 
     87, 33, 312, 242, 42, 61, 348, 346, 98, 92, 
     83, 100, 94, 40, 5, 458, 364, 26, 64, 635, 
-    90, 489, 72, 504, 88, 97, 226, 218, 186, 268
+    90, 489, 72, 504, 88, 97, 226, 218, 186, 268, 1
 ]
 
 count = len(array)
@@ -38,7 +38,7 @@ def partition(left, right):
        #left가 q와 같다면 pivot보다 작은 것이 하나도 없다는 뜻이므로 옮길 필요가 없다.
        if left !=q:
               array[left], array[q]= array[q], array[left]
-       return q #q위치를 리턴
+       return q                           #q위치를 리턴
 
 
 def quick_sort(left, right):     
