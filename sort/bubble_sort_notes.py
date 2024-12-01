@@ -10,7 +10,7 @@ count = len(array)
 
 def bubble_sort(arr):
        for end in range(count-1, 0, -1):
-              for i in range(count-1):
+              for i in range(end):
                      if arr[i]> arr[i+1]:
                             arr[i], arr[i+1] =arr[i+1] , arr[i]
 
